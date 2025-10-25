@@ -1,0 +1,62 @@
+@theme {
+  /* Font */
+  --font-sans: Pretendard, system-ui, sans-serif;
+
+  /* Primary Colors */
+  --color-main-green: #58cf04;
+  --color-light-green: #f8fff2;
+  --color-chat-green: #95f551;
+  --color-black: #0f0f10;
+  --color-white: #ffffff;
+
+  /* Gray Scale */
+  --color-gray-900: #0f0f10;
+  --color-gray-850: #171719;
+  --color-gray-800: #292a2d;
+  --color-gray-750: #333438;
+  --color-gray-700: #46474c;
+  --color-gray-600: #70737c;
+  --color-gray-500: #878a93;
+  --color-gray-450: #989ba2;
+  --color-gray-400: #aeb0b6;
+  --color-gray-300: #c2c4c8;
+  --color-gray-250: #dbdcdf;
+  --color-gray-200: #e1e2e4;
+  --color-gray-150: #f4f4f5;
+  --color-gray-100: #fafafa;
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Font sizes */
+  --font-size-22: 22px;
+  --font-size-16: 16px;
+  --font-size-15: 15px;
+  --font-size-14: 14px;
+  --font-size-13: 13px;
+  --font-size-12: 12px;
+  --font-size-10: 10px;
+
+  /* Line-heights */
+  --line-height-33: 33px;
+  --line-height-28: 28px;
+  --line-height-24: 24px;
+  --line-height-22: 22px;
+  --line-height-20: 20px;
+  --line-height-19: 19px;
+  --line-height-17: 17px;
+  --line-height-16: 16px;
+  --line-height-14: 14px;
+  --line-height-12: 12px;
+
+  /* Letter-spacing */
+  --letter-spacing-tight-01: -0.1px;
+  --letter-spacing-tight-03: -0.3px;
+  --letter-spacing-tight-015: -0.15px;
+  --letter-spacing-wide-033: 0.33px;
+  --letter-spacing-wide-03: 0.3px;
+  --letter-spacing-normal: 0px;
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "messages": "/data/messages/chat_1.json",
+    "unreadCount": 0
+  },
+  {
+    "id": 2,
+    "userId": 2,
+    "messages": "/data/messages/chat_2.json",
+    "unreadCount": 3
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "userId": 2,
+    "text": "안녕하세요.! 연락 가능한가요",
+    "type": "received",
+    "createdAt": "2025-10-02",
+    "time": "09:15"
+  },
+  {
+    "id": 2,
+    "userId": 0,
+    "text": "무슨 일이신가요??",
+    "type": "sent",
+    "createdAt": "2025-10-02",
+    "time": "09:17"
+  },
+  {
+    "id": 3,
+    "userId": 2,
+    "text": "프로젝트 관련해서 잠시 드릴 말씀이 있어서요!",
+    "type": "received",
+    "createdAt": "2025-10-02",
+    "time": "09:20"
+  },
+  {
+    "id": 4,
+    "userId": 2,
+    "text": "이따가 잠깐 통화 가능할까요??",
+    "type": "received",
+    "createdAt": "2025-10-02",
+    "time": "09:20"
+  },
+  {
+    "id": 5,
+    "userId": 2,
+    "text": "10분 정도면 끝납니다!",
+    "type": "received",
+    "createdAt": "2025-10-02",
+    "time": "09:21"
+  }
+]
