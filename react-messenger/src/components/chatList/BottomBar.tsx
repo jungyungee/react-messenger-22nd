@@ -1,6 +1,8 @@
 import AddIcon from "../../assets/icons/Main/add.svg?react";
 import CallIcon from "../../assets/icons/Main/call.svg?react";
 import CommunityIcon from "../../assets/icons/Main/community.svg?react";
+import MessageIcon from "../../assets/icons/Main/message.svg?react";
+import MoreIcon from "../../assets/icons/Main/morebottombar.svg?react";
 
 const BottomBar = () => {
   return (
@@ -26,10 +28,10 @@ const BottomBar = () => {
 
         {/* 채팅 */}
         <div className="relative flex flex-col items-center justify-center text-gray-800">
-          <div className="relative w-6 h-6 mb-1 flex items-center justify-center">
-            💬
-            <span className="absolute -top-1.5 -right-3 bg-main-green text-white text-[9px] font-semibold px-[5px] py-[1px] rounded-full">
-              999+
+          <div className="relative">
+            <MessageIcon className="w-6 h-6" />
+            <span className="absolute -top-1 -right-2 bg-main-green text-white text-[12px] font-semibold px-[5px] py-[1px] rounded-full">
+              3
             </span>
           </div>
           <p className="body-3">채팅</p>
@@ -37,7 +39,7 @@ const BottomBar = () => {
 
         {/* 더보기 */}
         <div className="flex flex-col items-center justify-center text-gray-400">
-          <div className="w-6 h-6 mb-1 flex items-center justify-center">⋯</div>
+          <MoreIcon />
           <p className="body-3">더보기</p>
         </div>
       </nav>
