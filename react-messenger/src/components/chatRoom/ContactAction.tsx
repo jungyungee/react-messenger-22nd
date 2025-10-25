@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import LeftIcon from "../../assets/icons/ContactAction/LeftIcon";
 import SearchIcon from "../../assets/icons/ContactAction/SearchIcon";
-import CallIcon from "../../assets/icons/ContactAction/CallIcon";
+import CallIcon from "../../assets/icons/Main/call.svg?react";
 import VideoIcon from "../../assets/icons/ContactAction/VideoIcon";
 import ProfileIcon from "../../assets/icons/ContactAction/ProfileIcon";
 import RightIcon from "../../assets/icons/ContactAction/RightIcon";
@@ -58,7 +58,7 @@ const ContactAction = ({ user }: Props) => {
         {/* 오른쪽: 액션 버튼들 */}
         <div className="flex items-center space-x-3 text-green-500">
           <SearchIcon />
-          <CallIcon />
+          <CallIcon className="text-main-green" />
           <VideoIcon />
         </div>
       </div>

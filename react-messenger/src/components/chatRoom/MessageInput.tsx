@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CameraIcon from "../../assets/icons/CameraIcon";
+import CameraIcon from "../../assets/icons/Main/camera.svg?react";
 import PlusIcon from "../../assets/icons/PlusIcon";
 import StickerIcon from "../../assets/icons/StickerIcon";
 import SendIcon from "../../assets/icons/SendIcon";

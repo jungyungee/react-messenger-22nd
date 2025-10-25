@@ -1,28 +1,26 @@
+import AddIcon from "../../assets/icons/Main/add.svg?react";
+import CallIcon from "../../assets/icons/Main/call.svg?react";
+import CommunityIcon from "../../assets/icons/Main/community.svg?react";
+
 const BottomBar = () => {
   return (
     <>
       <nav className="flex h-12.25 justify-around items-center px-4 py-2 border-t border-gray-200 bg-gray-100">
         {/* 업데이트 */}
         <div className="flex flex-col items-center justify-center text-gray-400">
-          <div className="w-6 h-6 mb-1 flex items-center justify-center">
-            ➕
-          </div>
+          <AddIcon className="text-gray-400" />
           <p className="body-3">업데이트</p>
         </div>
 
         {/* 통화 */}
         <div className="flex flex-col items-center justify-center text-gray-400">
-          <div className="w-6 h-6 mb-1 flex items-center justify-center">
-            📞
-          </div>
+          <CallIcon className="text-gray-400" />
           <p className="body-3">통화</p>
         </div>
 
         {/* 커뮤니티 */}
         <div className="flex flex-col items-center justify-center text-gray-400">
-          <div className="w-6 h-6 mb-1 flex items-center justify-center">
-            👥
-          </div>
+          <CommunityIcon />
           <p className="body-3">커뮤니티</p>
         </div>
 
