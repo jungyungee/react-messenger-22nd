@@ -49,9 +49,22 @@ const ChatList = () => {
 
         for (const conv of conversations) {
           const user = users.find((u) => u.id === conv.userId);
-          const res = await fetch(conv.messages);
-          if (!res.ok) continue;
-          const messages = await res.json();
+
+          // ✅ 1️⃣ 로컬스토리지 확인
+          const storedMessages = localStorage.getItem(
+            `chat_${conv.id}_messages`
+          );
+          let messages;
+
+          if (storedMessages) {
+            // 로컬스토리지 메시지 사용
+            messages = JSON.parse(storedMessages);
+          } else {
+            // 없으면 JSON 더미에서 불러오기
+            const res = await fetch(conv.messages);
+            if (!res.ok) continue;
+            messages = await res.json();
+          }
 
           const lastMsg = messages[messages.length - 1];
           results.push({

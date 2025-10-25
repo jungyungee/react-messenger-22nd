@@ -31,23 +31,34 @@ const ChatRoom = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [userRes, convRes, msgRes] = await Promise.all([
+        const [userRes, convRes] = await Promise.all([
           fetch("/data/users.json"),
           fetch("/data/conversation.json"),
-          fetch(`/data/messages/chat_${id}.json`),
         ]);
 
-        if (!userRes.ok || !msgRes.ok || !convRes.ok)
+        if (!userRes.ok || !convRes.ok)
           throw new Error("데이터를 불러올 수 없습니다.");
 
         const usersData: User[] = await userRes.json();
         const convData: Conversation[] = await convRes.json();
-        const msgData: Message[] = await msgRes.json();
-
         const currentConv = convData.find((c) => c.id === Number(id));
-        setConversation(currentConv || null);
+
+        // localStorage에 메시지 있는지 확인
+        const storedMessages = localStorage.getItem(`chat_${id}_messages`);
+        if (storedMessages) {
+          setMessages(JSON.parse(storedMessages));
+        } else {
+          // 없으면 더미 데이터 사용
+          const msgRes = await fetch(`/data/messages/chat_${id}.json`);
+          if (!msgRes.ok) throw new Error("메시지를 불러올 수 없습니다.");
+          const msgData: Message[] = await msgRes.json();
+          setMessages(msgData);
+          // 첫 로드 시 로컬스토리지 초기화
+          localStorage.setItem(`chat_${id}_messages`, JSON.stringify(msgData));
+        }
+
         setUsers(usersData);
-        setMessages(msgData);
+        setConversation(currentConv || null);
       } catch (error) {
         console.error(error);
       }
@@ -56,6 +67,13 @@ const ChatRoom = () => {
     loadData();
   }, [id]);
 
+  // ✅ 2️⃣ messages 변경 시 자동 저장
+  useEffect(() => {
+    if (messages.length > 0) {
+      localStorage.setItem(`chat_${id}_messages`, JSON.stringify(messages));
+    }
+  }, [messages, id]);
+
   // 자동 스크롤
   useEffect(() => {
     if (containerRef.current) {
@@ -63,7 +81,7 @@ const ChatRoom = () => {
     }
   }, [messages]);
 
-  // 전송 로직
+  // ✅ 3️⃣ 전송 로직 (setMessages가 자동으로 localStorage도 갱신시킴)
   const handleSend = (text: string) => {
     const now = new Date();
     const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(
