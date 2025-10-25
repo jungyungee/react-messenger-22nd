@@ -92,11 +92,11 @@ const ChatRoom = () => {
   const targetUser = users.find((u) => u.id === conversation?.userId);
 
   return (
-    <div className="h-full aspect-[375/812] bg-light-green relative flex flex-col">
+    <div className="h-full aspect-375/812 bg-light-green relative flex flex-col">
       <ContactAction user={targetUser} />
       <div
         ref={containerRef}
-        className="flex-1 overflow-y-auto pt-[8px] pb-[25%] px-[16px] scrollbar-hide"
+        className="flex-1 overflow-y-auto pt-2 pb-[25%] px-4 scrollbar-hide"
       >
         {messages.map((msg, index) => {
           const prevMsg = messages[index - 1];

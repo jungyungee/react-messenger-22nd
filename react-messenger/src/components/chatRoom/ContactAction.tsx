@@ -1,10 +1,10 @@
 import { useNavigate, useParams } from "react-router-dom";
-import LeftIcon from "../../assets/icons/ContactAction/LeftIcon";
-import SearchIcon from "../../assets/icons/ContactAction/SearchIcon";
+import LeftIcon from "../../assets/icons/common/left.svg?react";
+import SearchIcon from "../../assets/icons/Chat/search.svg?react";
 import CallIcon from "../../assets/icons/Main/call.svg?react";
-import VideoIcon from "../../assets/icons/ContactAction/VideoIcon";
-import ProfileIcon from "../../assets/icons/ContactAction/ProfileIcon";
-import RightIcon from "../../assets/icons/ContactAction/RightIcon";
+import VideoIcon from "../../assets/icons/common/video.svg?react";
+import RightIcon from "../../assets/icons/common/rightthin.svg?react";
+import ProfileIcon from "../../assets/icons/common/profileIcon.svg?react";
 
 interface User {
   id: number;
@@ -36,7 +36,7 @@ const ContactAction = ({ user }: Props) => {
 
         {/* 가운데: 프로필 정보 */}
         <div className="flex items-center">
-          <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center mr-[8px]">
+          <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center mr-2">
             {user?.avatar ? (
               <img
                 src={user.avatar}
@@ -50,10 +50,10 @@ const ContactAction = ({ user }: Props) => {
 
           <div className="flex flex-col">
             <div className="flex items-center">
-              <span className="max-w-[128px] truncate title-3 mr-1">
+              <span className="max-w-32 truncate title-3 mr-1">
                 {user?.name || "Loading..."}
               </span>
-              <button onClick={handleGoProfile} className="text-gray-400">
+              <button onClick={handleGoProfile} className="text-gray-800">
                 <RightIcon className="cursor-pointer hover:text-main-green transition-colors" />
               </button>
             </div>
@@ -65,7 +65,7 @@ const ContactAction = ({ user }: Props) => {
         <div className="flex items-center space-x-3 text-green-500">
           <SearchIcon />
           <CallIcon className="text-main-green" />
-          <VideoIcon />
+          <VideoIcon className="text-main-green" />
         </div>
       </div>
     </div>

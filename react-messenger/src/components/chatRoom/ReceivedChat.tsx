@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import ProfileIcon from "../../assets/icons/ContactAction/ProfileIcon";
-import ShowAllIcon from "../../assets/icons/ShowAllIcon";
+import ProfileIcon from "../../assets/icons/common/profileIcon.svg?react";
+import ShowAllIcon from "../../assets/icons/common/rightthin.svg?react";
 
 interface RecievedChatProps {
   text: string;
@@ -22,18 +22,18 @@ const RecievedChat = ({ text, time, avatar }: RecievedChatProps) => {
   }, [text]);
 
   return (
-    <div className="flex flex-row items-end w-full mt-[8px]">
+    <div className="flex flex-row items-end w-full mt-2">
       {avatar ? (
         <img
           src={avatar}
           alt="avatar"
-          className="w-[24px] h-[24px] rounded-full object-cover flex-shrink-0"
+          className="w-6 h-6 rounded-full object-cover shrink-0"
         />
       ) : (
-        <ProfileIcon className="w-[24px] h-[24px] flex-shrink-0" />
+        <ProfileIcon className="w-6 h-6 shrink-0" />
       )}
 
-      <div className="body-1 rounded-[16px] bg-[#EFEFF3] text-gray-800 w-auto max-w-[251px] min-h-[34px] pr-[12px] pl-[12px] pb-[6px] pt-[6px] ml-[12px] relative">
+      <div className="body-1 rounded-2xl bg-[#EFEFF3] text-gray-800 w-auto max-w-[251px] min-h-[34px] px-3 py-1.5 ml-3 relative">
         <div
           ref={textRef}
           className={`whitespace-pre-line ${isExpanded ? "" : "line-clamp-17"}`}
@@ -48,13 +48,13 @@ const RecievedChat = ({ text, time, avatar }: RecievedChatProps) => {
             className="w-full flex flex-row items-center justify-between body-8 text-gray-600 mt-1 no-underline"
           >
             <span>전체보기</span>
-            <ShowAllIcon />
+            <ShowAllIcon className="text-gray-600" />
           </button>
         )}
       </div>
 
       {/* 시간 */}
-      {time && <span className="ml-[8px] body-3 text-gray-300">{time}</span>}
+      {time && <span className="ml-2 body-3 text-gray-300">{time}</span>}
     </div>
   );
 };

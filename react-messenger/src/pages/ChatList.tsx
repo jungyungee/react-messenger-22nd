@@ -91,7 +91,7 @@ const ChatList = () => {
         <input
           type="text"
           placeholder="검색"
-          className="w-full h-[37px] rounded-[12px] bg-gray-100 pl-9 pr-3 text-[14px] text-gray-700 placeholder:text-gray-400 focus:outline-none"
+          className="w-full h-[37px] rounded-xl bg-gray-100 pl-9 pr-3 text-[14px] text-gray-700 placeholder:text-gray-400 focus:outline-none"
         />
       </div>
 

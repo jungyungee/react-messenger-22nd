@@ -31,14 +31,14 @@ const MessageInput = ({ onSend }: MessageInputProps) => {
   };
 
   return (
-    <div className="w-full aspect-[375/84] relative">
-      <div className="w-full aspect-[375/62] bg-white absolute bottom-0 left-0"></div>
+    <div className="w-full aspect-375/84 relative">
+      <div className="w-full aspect-375/62 bg-white absolute bottom-0 left-0"></div>
       <div
-        className="w-[calc(100%-32px)] mx-4 aspect-[343/44]
+        className="w-[calc(100%-32px)] mx-4 aspect-343/44
                   bg-[rgba(224,224,224,0.3)] backdrop-blur-[20px] 
                   rounded-[100px] flex items-center px-3"
       >
-        <button className="w-6 h-6 flex items-center justify-center mr-[12px]">
+        <button className="w-6 h-6 flex items-center justify-center mr-3">
           <PlusIcon />
         </button>
         <input

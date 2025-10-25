@@ -1,10 +1,10 @@
 import { useNavigate, useParams } from "react-router-dom";
-import LeftIcon from "../assets/icons/ContactAction/LeftIcon";
+import LeftIcon from "../assets/icons/common/left.svg?react";
 import CallIcon from "../assets/icons/Main/call.svg?react";
-import VideoIcon from "../assets/icons/ContactAction/VideoIcon";
-import SearchIcon from "../assets/icons/ContactAction/SearchIcon";
+import VideoIcon from "../assets/icons/common/video.svg?react";
+import SearchIcon from "../assets/icons/Profile/profilesearch.svg?react";
 import MoreIcon from "../assets/icons/Main/morebottombar.svg?react";
-import ProfileIcon from "../assets/icons/ContactAction/ProfileIcon";
+import ProfileIcon from "../assets/icons/common/profileIcon.svg";
 import MediaIcon from "../assets/icons/Profile/media.svg?react";
 import LikeIcon from "../assets/icons/Profile/like.svg?react";
 import RightIcon from "../assets/icons/Profile/rightthick.svg?react";
@@ -38,7 +38,7 @@ const Profile = () => {
   }, [userId]);
 
   return (
-    <div className="h-full aspect-[375/812] bg-white relative flex flex-col items-center overflow-y-auto">
+    <div className="h-full aspect-375/812 bg-white relative flex flex-col items-center overflow-y-auto">
       {/* 상단 */}
       <div className="w-full flex items-center justify-between px-4 pt-14">
         <button onClick={() => navigate(-1)}>
@@ -60,7 +60,7 @@ const Profile = () => {
               className="w-full h-full object-cover"
             />
           ) : (
-            <ProfileIcon className="text-gray-400" />
+            <ProfileIcon />
           )}
         </div>
       </div>

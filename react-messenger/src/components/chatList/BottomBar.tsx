@@ -30,7 +30,7 @@ const BottomBar = () => {
         <div className="relative flex flex-col items-center justify-center text-gray-800">
           <div className="relative">
             <MessageIcon className="w-6 h-6" />
-            <span className="absolute -top-1 -right-2 bg-main-green text-white text-[12px] font-semibold px-[5px] py-[1px] rounded-full">
+            <span className="absolute -top-1 -right-2 bg-main-green text-white text-[12px] font-semibold px-[5px] py-px rounded-full">
               3
             </span>
           </div>

@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import LeftIcon from "../assets/icons/ContactAction/LeftIcon";
+import LeftIcon from "../assets/icons/Profile/roundback.svg?react";
 import CallIcon from "../assets/icons/Main/call.svg?react";
-import VideoIcon from "../assets/icons/ContactAction/VideoIcon";
-import SearchIcon from "../assets/icons/ContactAction/SearchIcon";
+import VideoIcon from "../assets/icons/common/video.svg?react";
+import SearchIcon from "../assets/icons/Profile/profilesearch.svg?react";
 import MoreIcon from "../assets/icons/Main/morebottombar.svg?react";
-import ProfileIcon from "../assets/icons/ContactAction/ProfileIcon";
+import ProfileIcon from "../assets/icons/common/profileIcon.svg?react";
 import MediaIcon from "../assets/icons/Profile/media.svg?react";
 import LikeIcon from "../assets/icons/Profile/like.svg?react";
 import RightIcon from "../assets/icons/Profile/rightthick.svg?react";
+import ModifyIcon from "../assets/icons/Profile/pencil.svg?react";
 
 interface User {
   id: number;
@@ -39,8 +40,8 @@ const ProfilePhoto = () => {
   if (!user) return null;
 
   return (
-    <div className="h-full aspect-[375/812] bg-white flex flex-col overflow-hidden relative">
-      {/* 상단 이미지 영역 */}
+    <div className="h-full aspect-375/812 bg-white flex flex-col overflow-hidden relative">
+      {/* 이미지 */}
       <div className="relative w-full h-[500px] overflow-hidden">
         {user.avatar ? (
           <img
@@ -54,10 +55,10 @@ const ProfilePhoto = () => {
           </div>
         )}
 
-        {/* 상단 아이콘 */}
-        <div className="absolute top-[52px] left-4 right-4 flex items-center justify-between text-white">
+        {/* 뒤로가기 */}
+        <div className="absolute top-12 left-4 right-4 flex items-center justify-between text-white">
           <button onClick={() => navigate(-1)}>
-            <LeftIcon className="text-white w-6 h-6" />
+            <LeftIcon className="text-white w-8 h-8 cursor-pointer" />
           </button>
         </div>
 
@@ -67,16 +68,19 @@ const ProfilePhoto = () => {
             className="absolute inset-0 backdrop-blur-[20px]"
             style={{
               WebkitMaskImage:
-                "linear-gradient(to top, rgba(0,0,0,1) 70%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0) 100%)",
+                "linear-gradient(to top, rgba(0,0,0,1) 50%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0) 100%)",
               maskImage:
-                "linear-gradient(to top, rgba(0,0,0,1) 70%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0) 100%)",
+                "linear-gradient(to top, rgba(0,0,0,1) 50%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0) 100%)",
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/30 to-transparent" />
 
-          {/* 이름 / 번호 */}
+          {/* 정보 */}
           <div className="absolute bottom-16 w-full px-5 pb-8 text-white">
-            <h1 className="text-lg font-semibold">{user.name}</h1>
+            <div className="flex gap-x-3">
+              <h1 className="text-lg font-semibold">{user.name}</h1>
+              <ModifyIcon />
+            </div>
             <p className="text-sm opacity-80 mt-0.5">
               {user.phone ? `+82 ${user.phone}` : ""}
             </p>
@@ -84,7 +88,7 @@ const ProfilePhoto = () => {
         </div>
       </div>
 
-      {/* 버튼 영역 */}
+      {/* 버튼 */}
       <div className="relative z-20 -mt-20 px-4">
         <div className="grid grid-cols-4 gap-1.5">
           {[
@@ -118,7 +122,7 @@ const ProfilePhoto = () => {
         </div>
       </div>
 
-      {/* 미디어 / 즐겨찾기 섹션 */}
+      {/* 메뉴 */}
       <div className="flex flex-col divide-y divide-gray-150 px-5 py-4 mt-4">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center gap-2 text-gray-700">

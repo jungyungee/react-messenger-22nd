@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import ShowAllIcon from "../../assets/icons/ShowAllIcon";
+import ShowAllIcon from "../../assets/icons/common/rightthin.svg?react";
 
 interface SentChatProps {
   text: string;
@@ -19,13 +19,13 @@ const SentChat = ({ text, time }: SentChatProps) => {
   }, [text]);
 
   return (
-    <div className="flex justify-end items-end w-full mt-[8px]">
-      {time && <span className="mr-[8px] body-3 text-gray-300">{time}</span>}
+    <div className="flex justify-end items-end w-full mt-2">
+      {time && <span className="mr-2 body-3 text-gray-300">{time}</span>}
 
       <div
-        className="body-1 rounded-[16px] bg-chat-green text-gray-850
+        className="body-1 rounded-2xl bg-chat-green text-gray-850
                     w-auto max-w-[251px] min-h-[34px]
-                    px-[12px] py-[6px] relative"
+                    px-3 py-1.5 relative"
       >
         <div
           ref={textRef}
@@ -40,7 +40,7 @@ const SentChat = ({ text, time }: SentChatProps) => {
             className="w-full flex flex-row items-center justify-between body-8 text-gray-850 mt-1 no-underline"
           >
             <span>전체보기</span>
-            <ShowAllIcon fill="text-gray-300" />
+            <ShowAllIcon className="text-gray-300" />
           </button>
         )}
       </div>
