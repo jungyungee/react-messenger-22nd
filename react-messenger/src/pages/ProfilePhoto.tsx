@@ -1,0 +1,153 @@
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import LeftIcon from "../assets/icons/Profile/roundback.svg?react";
+import CallIcon from "../assets/icons/Main/call.svg?react";
+import VideoIcon from "../assets/icons/common/video.svg?react";
+import SearchIcon from "../assets/icons/Profile/profilesearch.svg?react";
+import MoreIcon from "../assets/icons/Main/morebottombar.svg?react";
+import ProfileIcon from "../assets/icons/common/profileIcon.svg?react";
+import MediaIcon from "../assets/icons/Profile/media.svg?react";
+import LikeIcon from "../assets/icons/Profile/like.svg?react";
+import RightIcon from "../assets/icons/Profile/rightthick.svg?react";
+import ModifyIcon from "../assets/icons/Profile/pencil.svg?react";
+
+interface User {
+  id: number;
+  name: string;
+  avatar?: string;
+  phone?: string;
+}
+
+const ProfilePhoto = () => {
+  const navigate = useNavigate();
+  const { userId } = useParams();
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const loadUser = async () => {
+      try {
+        const res = await fetch("/data/users.json");
+        const data: User[] = await res.json();
+        const found = data.find((u) => u.id === Number(userId));
+        setUser(found || null);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    loadUser();
+  }, [userId]);
+
+  if (!user) return null;
+
+  return (
+    <div className="h-full aspect-375/812 bg-white flex flex-col overflow-hidden relative">
+      {/* 이미지 */}
+      <div className="relative w-full h-[500px] overflow-hidden">
+        {user.avatar ? (
+          <img
+            src={user.avatar}
+            alt={user.name}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+            <ProfileIcon className="w-20 h-20 text-gray-400" />
+          </div>
+        )}
+
+        {/* 뒤로가기 */}
+        <div className="absolute top-12 left-4 right-4 flex items-center justify-between text-white">
+          <button onClick={() => navigate(-1)}>
+            <LeftIcon className="text-white w-8 h-8 cursor-pointer" />
+          </button>
+        </div>
+
+        {/* 블러 */}
+        <div className="absolute bottom-0 w-full h-[200px] overflow-hidden">
+          <div
+            className="absolute inset-0 backdrop-blur-[20px]"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to top, rgba(0,0,0,1) 50%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0) 100%)",
+              maskImage:
+                "linear-gradient(to top, rgba(0,0,0,1) 50%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0) 100%)",
+            }}
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/30 to-transparent" />
+
+          {/* 정보 */}
+          <div className="absolute bottom-16 w-full px-5 pb-8 text-white">
+            <div className="flex gap-x-3">
+              <h1 className="text-lg font-semibold">{user.name}</h1>
+              <ModifyIcon />
+            </div>
+            <p className="text-sm opacity-80 mt-0.5">
+              {user.phone ? `+82 ${user.phone}` : ""}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* 버튼 */}
+      <div className="relative z-20 -mt-20 px-4">
+        <div className="grid grid-cols-4 gap-x-2 sm:gap-x-3 md:gap-x-4 justify-items-center">
+          {[
+            {
+              icon: <CallIcon className="text-white w-6 h-6" />,
+              label: "오디오",
+            },
+            {
+              icon: <VideoIcon className="text-white w-6 h-6" />,
+              label: "비디오",
+            },
+            {
+              icon: <SearchIcon className="text-white w-6 h-6" />,
+              label: "검색",
+            },
+            {
+              icon: <MoreIcon className="text-white w-6 h-6" />,
+              label: "옵션",
+            },
+          ].map((item, i) => (
+            <button
+              key={i}
+              className="flex flex-col items-center justify-center w-full max-w-[90px] aspect-[5/4]"
+            >
+              <div className="flex flex-col w-full h-full rounded-xl bg-white/30 backdrop-blur-sm items-center justify-center transition-all">
+                {item.icon}
+                <span className="text-xs text-white mt-1">{item.label}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* 메뉴 */}
+      <div className="flex flex-col divide-y divide-gray-150 px-5 py-4 mt-4">
+        <div className="flex items-center justify-between py-4">
+          <div className="flex items-center gap-2 text-gray-700">
+            <MediaIcon />
+            <span className="body-4">미디어, 링크, 문서</span>
+          </div>
+          <div className="flex">
+            <span className="text-gray-400 body-2">없음</span>
+            <RightIcon className="mt-0.5" />
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between py-4">
+          <div className="flex items-center gap-2 text-gray-700">
+            <LikeIcon />
+            <span className="body-4">즐겨찾기</span>
+          </div>
+          <div className="flex">
+            <span className="text-gray-400 body-2">없음</span>
+            <RightIcon className="mt-0.5" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProfilePhoto;
