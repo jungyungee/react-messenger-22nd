@@ -80,34 +80,35 @@ const Profile = () => {
       </div>
 
       {/* 메뉴 */}
-      <div className="grid grid-cols-4 gap-1.5 mt-6 px-4">
-        <button className="flex flex-col items-center justify-center">
-          <div className="flex-col w-18 h-14 bg-white rounded-2xl flex items-center justify-center border border-gray-150">
-            <CallIcon className="text-main-green w-6 h-6" />
-            <span className="text-xs text-main-green mt-1">오디오</span>
-          </div>
-        </button>
-
-        <button className="flex flex-col items-center justify-center">
-          <div className="flex-col w-18 h-14 bg-white rounded-2xl flex items-center justify-center border border-gray-150">
-            <VideoIcon className="text-main-green w-6 h-6" />
-            <span className="text-xs text-main-green mt-1">비디오</span>
-          </div>
-        </button>
-
-        <button className="flex flex-col items-center justify-center">
-          <div className="flex-col w-18 h-14 bg-white rounded-2xl flex items-center justify-center border border-gray-150">
-            <SearchIcon className="text-main-green w-6 h-6" />
-            <span className="text-xs text-main-green mt-1">검색</span>
-          </div>
-        </button>
-
-        <button className="flex flex-col items-center justify-center">
-          <div className="flex-col w-18 h-14 bg-white rounded-2xl flex items-center justify-center  border border-gray-150">
-            <MoreIcon className="text-main-green w-6 h-6" />
-            <span className="text-xs text-main-green mt-1">옵션</span>
-          </div>
-        </button>
+      <div className="w-full px-4 mt-6 grid grid-cols-4 gap-x-2 sm:gap-x-3 md:gap-x-4 justify-items-center">
+        {[
+          {
+            icon: <CallIcon className="text-main-green w-6 h-6" />,
+            label: "오디오",
+          },
+          {
+            icon: <VideoIcon className="text-main-green w-6 h-6" />,
+            label: "비디오",
+          },
+          {
+            icon: <SearchIcon className="text-main-green w-6 h-6" />,
+            label: "검색",
+          },
+          {
+            icon: <MoreIcon className="text-main-green w-6 h-6" />,
+            label: "옵션",
+          },
+        ].map((item, i) => (
+          <button
+            key={i}
+            className="flex flex-col items-center justify-center w-full max-w-[90px] aspect-[5/4]"
+          >
+            <div className="flex flex-col w-full h-full bg-white rounded-xl border border-gray-150 items-center justify-center">
+              {item.icon}
+              <span className="text-xs text-main-green mt-1">{item.label}</span>
+            </div>
+          </button>
+        ))}
       </div>
 
       {/* 미디어, 즐겨찾기 */}

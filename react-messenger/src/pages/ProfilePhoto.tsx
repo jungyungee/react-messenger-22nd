@@ -90,7 +90,7 @@ const ProfilePhoto = () => {
 
       {/* 버튼 */}
       <div className="relative z-20 -mt-20 px-4">
-        <div className="grid grid-cols-4 gap-1.5">
+        <div className="grid grid-cols-4 gap-x-2 sm:gap-x-3 md:gap-x-4 justify-items-center">
           {[
             {
               icon: <CallIcon className="text-white w-6 h-6" />,
@@ -111,9 +111,9 @@ const ProfilePhoto = () => {
           ].map((item, i) => (
             <button
               key={i}
-              className="flex flex-col items-center justify-center"
+              className="flex flex-col items-center justify-center w-full max-w-[90px] aspect-[5/4]"
             >
-              <div className="flex flex-col w-18 h-14 rounded-2xl items-center justify-center bg-white/30 backdrop-blur-sm">
+              <div className="flex flex-col w-full h-full rounded-xl bg-white/30 backdrop-blur-sm items-center justify-center transition-all">
                 {item.icon}
                 <span className="text-xs text-white mt-1">{item.label}</span>
               </div>
@@ -127,7 +127,7 @@ const ProfilePhoto = () => {
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center gap-2 text-gray-700">
             <MediaIcon />
-            <span className="text-sm">미디어, 링크, 문서</span>
+            <span className="body-4">미디어, 링크, 문서</span>
           </div>
           <div className="flex">
             <span className="text-gray-400 body-2">없음</span>
@@ -138,7 +138,7 @@ const ProfilePhoto = () => {
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center gap-2 text-gray-700">
             <LikeIcon />
-            <span className="text-sm">즐겨찾기</span>
+            <span className="body-4">즐겨찾기</span>
           </div>
           <div className="flex">
             <span className="text-gray-400 body-2">없음</span>
