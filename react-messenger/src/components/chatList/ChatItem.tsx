@@ -34,12 +34,12 @@ const ChatItem = ({
           <span className="list-3 text-gray-400">{time}</span>
         </div>
 
-        <div className="flex justify-between items-center mt-[2px]">
+        <div className="flex justify-between items-center mt-0.5">
           <p className="list-3 text-gray-400 truncate max-w-[230px]">
             {message}
           </p>
           {unreadCount ? (
-            <span className="text-[11px] font-medium bg-main-green text-white px-[6px] py-[1px] rounded-full">
+            <span className="text-[11px] font-medium bg-main-green text-white px-1.5 py-px rounded-full">
               {unreadCount > 999 ? "999+" : unreadCount}
             </span>
           ) : null}

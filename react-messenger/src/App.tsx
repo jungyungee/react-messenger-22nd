@@ -7,7 +7,7 @@ function App() {
       <div
         className="
          bg-white shadow-lg overflow-hidden
-          h-[100dvh]
+          h-dvh
           w-[calc(100dvh*(375/812))] 
           max-w-[375px]
         "

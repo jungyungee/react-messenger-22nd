@@ -12,7 +12,7 @@ const ChatFilter = () => {
           <button
             key={i}
             onClick={() => setSelected(i)}
-            className={`relative flex items-center justify-center px-3 py-[6px] rounded-full border text-[13px] transition cursor-pointer
+            className={`relative flex items-center justify-center px-3 py-1.5 rounded-full border text-[13px] transition cursor-pointer
               ${
                 isSelected
                   ? "bg-gray-150 border-transparent font-semibold text-gray-800"
@@ -20,7 +20,7 @@ const ChatFilter = () => {
               }`}
           >
             {isSelected && (
-              <span className="w-[6px] h-[6px] rounded-full bg-main-green mr-[6px]"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-main-green mr-1.5"></span>
             )}
             {label}
           </button>

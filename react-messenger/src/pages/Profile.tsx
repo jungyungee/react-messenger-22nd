@@ -4,7 +4,7 @@ import CallIcon from "../assets/icons/Main/call.svg?react";
 import VideoIcon from "../assets/icons/common/video.svg?react";
 import SearchIcon from "../assets/icons/Profile/profilesearch.svg?react";
 import MoreIcon from "../assets/icons/Main/morebottombar.svg?react";
-import ProfileIcon from "../assets/icons/common/profileIcon.svg";
+import ProfileIcon from "../assets/icons/common/profileIcon.svg?react";
 import MediaIcon from "../assets/icons/Profile/media.svg?react";
 import LikeIcon from "../assets/icons/Profile/like.svg?react";
 import RightIcon from "../assets/icons/Profile/rightthick.svg?react";

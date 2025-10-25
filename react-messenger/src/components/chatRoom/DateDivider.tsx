@@ -19,7 +19,7 @@ const DateDivider = ({ date }: DateDividerProps) => {
       });
 
   return (
-    <div className="text-center text-gray-300 text-xs mb-[12px] mt-[24px]">
+    <div className="text-center text-gray-300 text-xs mb-3 mt-6">
       {formatted}
     </div>
   );
