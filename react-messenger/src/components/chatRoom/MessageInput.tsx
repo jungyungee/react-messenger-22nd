@@ -1,8 +1,8 @@
 import { useState } from "react";
 import CameraIcon from "../../assets/icons/Main/camera.svg?react";
-import PlusIcon from "../../assets/icons/PlusIcon";
-import StickerIcon from "../../assets/icons/StickerIcon";
-import SendIcon from "../../assets/icons/SendIcon";
+import PlusIcon from "../../assets/icons/Chat/plus.svg?react";
+import StickerIcon from "../../assets/icons/Chat/sticker.svg?react";
+import SendIcon from "../../assets/icons/Chat/send.svg?react";
 
 interface MessageInputProps {
   onSend: (text: string) => void; // 입력 받은 내용 상위 컴포넌트로 전달하기
@@ -48,7 +48,7 @@ const MessageInput = ({ onSend }: MessageInputProps) => {
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleKeyDown}
         ></input>
-        <div className="ml-auto flex">
+        <div className="ml-auto flex gap-x-2">
           <StickerIcon />
           {message.trim() ? (
             <button onClick={handleSend}>
