@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "name": "박서령",
-    "phone": "+82 010-1234-5678",
+    "name": "최솔희",
+    "phone": "010-1324-5768",
     "avatar": "/avatars/sample_image.png"
   },
   {
     "id": 2,
-    "name": "최솔희",
-    "phone": "+82 010-9999-2222",
+    "name": "박서령",
+    "phone": "010-9999-2222",
     "avatar": "/avatars/sample_image2.jpg"
   }
 ]

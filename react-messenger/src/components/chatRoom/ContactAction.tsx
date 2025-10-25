@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import LeftIcon from "../../assets/icons/ContactAction/LeftIcon";
 import SearchIcon from "../../assets/icons/ContactAction/SearchIcon";
 import CallIcon from "../../assets/icons/Main/call.svg?react";
@@ -19,6 +19,12 @@ interface Props {
 
 const ContactAction = ({ user }: Props) => {
   const navigate = useNavigate();
+  const { id } = useParams();
+
+  const handleGoProfile = () => {
+    if (!user) return;
+    navigate(`/chat/${id}/profile/${user.id}`);
+  };
 
   return (
     <div className="h-[100px] bg-white border-b border-[#EBEBEB] flex items-center justify-between px-4">
@@ -47,8 +53,8 @@ const ContactAction = ({ user }: Props) => {
               <span className="max-w-[128px] truncate title-3 mr-1">
                 {user?.name || "Loading..."}
               </span>
-              <button className="text-gray-400">
-                <RightIcon />
+              <button onClick={handleGoProfile} className="text-gray-400">
+                <RightIcon className="cursor-pointer hover:text-main-green transition-colors" />
               </button>
             </div>
             <span className="text-gray-400 text-xs">{user?.phone || ""}</span>

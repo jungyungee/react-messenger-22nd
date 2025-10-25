@@ -14,11 +14,11 @@ export const router = createBrowserRouter([
     element: <ChatRoom />,
   },
   {
-    path: "/profile",
+    path: "/chat/:chatId/profile/:userId",
     element: <Profile />,
   },
   {
-    path: "/profile/photo",
+    path: "/chat/:chatId/profile/:userId/photo",
     element: <ProfilePhoto />,
   },
 ]);
